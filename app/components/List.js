@@ -20,8 +20,8 @@ const List = ({mps, dataUser,  setEmailData,  setShowFindForm, setShowEmailForm,
         <div className={'buttonsContainer'}>
             <div className={'list-content-location'}>
                 <div>
-                    <h3 className='capitalize-style'> {mps.name + ' ' + mps.lastName} </h3>
-                    <p>Postal Code: {mps.postalcode}, State: {mps.state ? mps.state : ' ---'}, Party: {mps.party ? mps.party: ' ---'}</p>
+                    <h3 className='capitalize-style'> {mps.name} </h3>
+                    <p>State: {mps.state ? mps.state : ' ---'}, Party:{mps.party ? mps.party: ' ---'}</p>
                 </div>
             </div>
             <div className={'buttons'}>
@@ -43,7 +43,7 @@ const List = ({mps, dataUser,  setEmailData,  setShowFindForm, setShowEmailForm,
                 </div>
                 <div >
                     {
-                        mps.contact ?
+                        mps.email ?
                             <Button
                                 id="email-listView"
                                 className='list-button'

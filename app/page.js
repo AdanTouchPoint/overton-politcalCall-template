@@ -8,7 +8,7 @@ import { fetchStatesData } from './assets/petitions/fetchStatesData';
 import { fetchTweet } from './assets/petitions/fetchTweet';
 import { fetchTYM } from './assets/petitions/fetchTYM';
 import { fetchMainContent } from './assets/petitions/fetchMainContent';
-
+import { fetchAllLeads } from './assets/petitions/fetchLeads';
 //require('dotenv').config()
 function Home() {
   const [emailData, setEmailData] = useState({
@@ -26,6 +26,7 @@ function Home() {
       const [backendURLBaseServices] = useState(`${process.env.NEXT_PUBLIC_URL_SERVICES}`)
       const [clientId] = useState(`${process.env.NEXT_PUBLIC_CLIENT_ID}`)
       const [endpoints] = useState({
+        toGetRepresentativesByCp:'/find-mp/',
         toGetAllRepresentatives:'/all-representatives/',
         teGetRepresentativesPerStates:'/representatives-state/',
         toGetEmailsContent:'/email-message/',
@@ -72,10 +73,10 @@ function Home() {
 
         async function fetchData() {
           await Promise.all([
-            //fetchAllLeads('GET', backendURLBase, endpoints.toGetAllLeads, clientId, setLeads),
+            fetchAllLeads('GET', backendURLBase, endpoints.toGetAllLeads, clientId, setLeads),
             fetchMainContent('GET', backendURLBase, endpoints.toGetMainData, clientId, '', setMainData),
             fetchEmailData('GET', backendURLBase, endpoints.toGetEmailsContent, clientId, "", setDataUser),
-            fetchStatesData('GET', backendURLBase, endpoints.toGetAllRepresentatives, clientId, '', setStates),
+            //fetchStatesData('GET', backendURLBase, endpoints.toGetAllRepresentatives, clientId, '', setStates),
             fetchTweet('GET', backendURLBase, endpoints.toGetTweets, clientId, '', setTweet),
             fetchTYM('GET', backendURLBase, endpoints.toGetThankYouMessage, clientId, '', setTypData)
           ]).then(() => {

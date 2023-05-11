@@ -28,7 +28,7 @@ const ThankYou = ({
   };
   return (
     <div
-      onLoad={loadProgressbar()}
+      //onLoad={loadProgressbar()}
       hidden={showThankYou}
       className={"container typ-container"}
     >

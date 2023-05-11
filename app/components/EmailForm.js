@@ -43,7 +43,7 @@ const EmailForm = ({setShowThankYou, setShowFindForm, dataUser, setDataUser, sho
                 return
             }
         setError(false)
-        const payload = await fetchData('GET', backendURLBaseServices, endpoints.toSendEmails, clientId, `to=${emailData.contact}&subject=${dataUser.subject}&firstName=${dataUser.userName}&emailData=${dataUser.emailUser}&text=${dataUser.text.replace(/\n\r?/g, "<br/>")}` )
+        const payload = await fetchData('GET', backendURLBaseServices, endpoints.toSendEmails, clientId, `to=${emailData.email}&subject=${dataUser.subject}&firstName=${dataUser.userName}&emailData=${dataUser.emailUser}&text=${dataUser.text.replace(/\n\r?/g, "<br/>")}` )
         console.log(payload.success)
         setShowLoadSpin(false)
         if (payload.success === true) {
