@@ -10,10 +10,7 @@ const fetchRepresentatives = async (petitionMethod, backendURLBase, endpoint, cl
     setSenator(datos.statesFilter)
     setShowLoadSpin(false)
     setShowList(false)
-
 }
-
-
 export{
     fetchRepresentatives
 }

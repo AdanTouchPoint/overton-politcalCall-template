@@ -11,7 +11,6 @@ import Card from "react-bootstrap/cjs/Card";
 import { Link, animateScroll as scroll } from "react-scroll";
 import ProgressBar from "./ProgressBar";
 import { fetchRepresentatives } from "../assets/petitions/fetchRepresentatives";
-import { fetchAllLeads } from "../assets/petitions/fetchLeads";
 const MainForm = ({
   setLeads,
   leads,
@@ -240,7 +239,7 @@ const MainForm = ({
                 </Alert>
               )}
             </div>
-            <h2>{mainData.positionName}</h2>
+            <h2>{mainData.senatorLabel}</h2>
             <div className="representatives-container">
               {senator.length > 0 ? (
                 senator.map((mps, index) => (
